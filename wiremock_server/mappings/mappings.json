@@ -1,0 +1,71 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "urlPath": "/test",
+        "method": "GET"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/api/v1/users"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "users_resp.json",
+        "fixedDelayMilliseconds": 1000
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/api/v1/delivery-methods/cartId"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "delivery_methods_resp.json",
+        "fixedDelayMilliseconds": 1000
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/api/v1/carts/cartId"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "offers_resp.json",
+        "fixedDelayMilliseconds": 1000
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/api/v1/payment-methods/cartId"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "payment_methods_resp.json",
+        "fixedDelayMilliseconds": 1000
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/api/v1/users/subscriptions/userId"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "user_subscriptions.json",
+        "fixedDelayMilliseconds": 1000
+      }
+    }
+  ]
+}

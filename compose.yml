@@ -1,0 +1,16 @@
+services:
+  wiremock:
+    image: "wiremock/wiremock:3.4.2"
+    container_name: wiremock_for_coroutines
+    volumes:
+      - ./wiremock_server:/home/wiremock
+    entrypoint: ["/docker-entrypoint.sh", "--global-response-templating", "--disable-gzip", "--verbose"]
+    ports:
+      - "8080:8080"
+    environment:
+      - WIREMOCK_OPTIONS=--container-threads=300 --jetty-acceptor-threads=200 --async-response-enabled=true --async-response-threads=200 --verbose
+    deploy:
+      resources:
+        limits:
+          cpus: '5.00'
+          memory: 2048M
